@@ -20,6 +20,7 @@ namespace SISTRENT.Forms
 
         private  SISRENTEntities db;
         List<vwVehicle> lstResult = new List<vwVehicle>();
+
         List<Filter> lstFilters = new List<Filter>();
         List<vwBrand> lstBrand = new List<vwBrand>();
         List<vwModel> lstModel = new List<vwModel>();
