@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c0fbda90bf3a4182bf02f1192fb66a54" Name="Diagram1">
+        <EntityTypeShape EntityType="SISRENTModel.Table" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.vwBrand" Width="1.5" PointX="6.125" PointY="1" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.vwClass" Width="1.5" PointX="6.125" PointY="2.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.vwFilesDescription" Width="1.5" PointX="6.125" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.vwFuel" Width="1.5" PointX="6.125" PointY="3" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.vwModel" Width="1.5" PointX="6.125" PointY="3.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.vwStatu" Width="1.5" PointX="6.125" PointY="4" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.vwTran" Width="1.5" PointX="6.125" PointY="2" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.Filter" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.VehiclesExpenss" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.VehiclesMaintenaceInfo" Width="1.5" PointX="0.75" PointY="3" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.Client" Width="1.5" PointX="2.375" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.Insurence" Width="1.5" PointX="2.375" PointY="1" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.Partner" Width="1.5" PointX="2.375" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.vwSpentType" Width="1.5" PointX="7.75" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.VehiclesImagen" Width="1.5" PointX="0.75" PointY="2" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.Vehicle" Width="1.5" PointX="0.75" PointY="1" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.vwVehicle" Width="1.5" PointX="6.125" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SISRENTModel.VehiclesPrice" Width="1.5" PointX="2.375" PointY="2" IsExpanded="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SISRENTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adress1" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adress2" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LicenseNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LicenceExpiration" Type="date" Nullable="false" />
+          <Property Name="NacionalityId" Type="int" Nullable="false" />
+          <Property Name="IdentificationNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ContactPhone" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Filters">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TableName" />
+            <PropertyRef Name="FieldName" />
+          </Key>
+          <Property Name="Rid" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TableName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FieldName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FieldOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedDateBy" Type="smalldatetime" Nullable="false" />
+          <Property Name="ModiFiedDateBy" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Insurences">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adress1" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adress2" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ContactPhone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Partners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Adress1" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adress2" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateCreated" Type="date" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tables">
+          <Key>
+            <PropertyRef Name="TableName" />
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rid" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="TableName" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UDF01" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UDF02" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UDF03" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UDF04" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UDF05" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UDF06" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UDF07" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UDF08" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UDF09" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UDF10" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateBy" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="varchar" MaxLength="100" />
+          <Property Name="ModifyDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Vehicles">
+          <Key>
+            <PropertyRef Name="VehicleId" />
+          </Key>
+          <Property Name="VehicleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlateNumber" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Chassis" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Class" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Brand" Type="int" Nullable="false" />
+          <Property Name="Model" Type="int" Nullable="false" />
+          <Property Name="Color" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Transmission" Type="int" Nullable="false" />
+          <Property Name="Fuel" Type="int" Nullable="false" />
+          <Property Name="ManufactureYear" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="AcquisitionDate" Type="date" Nullable="false" />
+          <Property Name="Owner" Type="int" Nullable="false" />
+          <Property Name="Mileage" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price1" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price2" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price3" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price4" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price5" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price1A" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price2A" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price3A" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price4A" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price5A" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="CreateBy" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="varchar" MaxLength="100" />
+          <Property Name="ModifyDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="VehiclesExpensses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehicleId" Type="int" Nullable="false" />
+          <Property Name="ExpenseType" Type="int" Nullable="false" />
+          <Property Name="ExpenseDate" Type="date" Nullable="false" />
+          <Property Name="ExpenseAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ExpenseNotes" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VehiclesImagens">
+          <Key>
+            <PropertyRef Name="IdImagen" />
+          </Key>
+          <Property Name="IdImagen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idVehicle" Type="int" Nullable="false" />
+          <Property Name="Rid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DefaultImagen" Type="bit" Nullable="false" />
+          <Property Name="Picture" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="VehiclesMaintenaceInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehicleID" Type="int" Nullable="false" />
+          <Property Name="LastMileageService" Type="int" Nullable="false" />
+          <Property Name="IntervalMileageService" Type="int" Nullable="false" />
+          <Property Name="LastServiceDate" Type="date" Nullable="false" />
+          <Property Name="NextServiceDate" Type="date" Nullable="false" />
+          <Property Name="NextInspectionDate" Type="date" Nullable="false" />
+          <Property Name="PlateExpirationDate" Type="date" Nullable="false" />
+          <Property Name="InsuranceCode" Type="int" Nullable="false" />
+          <Property Name="InsurancePolicyNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="InsuranceExpirationDate" Type="date" Nullable="false" />
+          <Property Name="InsuranceAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VehiclesPrices">
+          <Key>
+            <PropertyRef Name="PriceId" />
+            <PropertyRef Name="VehicleId" />
+          </Key>
+          <Property Name="PriceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehicleId" Type="int" Nullable="false" />
+          <Property Name="DayRange1" Type="int" Nullable="false" />
+          <Property Name="DayRange2" Type="int" Nullable="false" />
+          <Property Name="Price1" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Price2" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SISRENT.dbo.vwBrands' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwBrands">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SISRENT.dbo.vwClasses' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwClasses">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6005: The data type 'sql_variant' is currently not supported for the target Entity Framework version; the column 'Descripcion' in the table 'SISRENT.dbo.vwFilesDescriptions' was excluded.
+warning 6002: The table/view 'SISRENT.dbo.vwFilesDescriptions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwFilesDescriptions">
+          <Key>
+            <PropertyRef Name="NombreTabla" />
+            <PropertyRef Name="TipoDatos" />
+            <PropertyRef Name="PermiteNulos" />
+          </Key>
+          <Property Name="NombreTabla" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="NombreCampo" Type="nvarchar" MaxLength="128" />
+          <Property Name="TipoDatos" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Precision" Type="smallint" />
+          <Property Name="Escala" Type="int" />
+          <Property Name="PermiteNulos" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="ValorDefecto" Type="nvarchar" MaxLength="4000" />
+          <Property Name="PrimaryKey" Type="char" MaxLength="2" />
+          <Property Name="NombreIndice" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SISRENT.dbo.vwFuel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwFuel">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SISRENT.dbo.vwModels' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwModels">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SISRENT.dbo.vwSpentType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwSpentType">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SISRENT.dbo.vwStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwStatus">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SISRENT.dbo.vwTrans' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwTrans">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SISRENT.dbo.vwVehicles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwVehicles">
+          <Key>
+            <PropertyRef Name="VehicleId" />
+            <PropertyRef Name="PlateNumber" />
+            <PropertyRef Name="Chassis" />
+            <PropertyRef Name="ClassCode" />
+            <PropertyRef Name="clasDescription" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="brandCode" />
+            <PropertyRef Name="brandDescription" />
+            <PropertyRef Name="modelCode" />
+            <PropertyRef Name="modelDescription" />
+            <PropertyRef Name="Color" />
+            <PropertyRef Name="tranCode" />
+            <PropertyRef Name="tranDescription" />
+            <PropertyRef Name="ManufactureYear" />
+            <PropertyRef Name="statCode" />
+            <PropertyRef Name="statDescription" />
+            <PropertyRef Name="AcquisitionDate" />
+            <PropertyRef Name="ownerCode" />
+            <PropertyRef Name="OwnName" />
+            <PropertyRef Name="Mileage" />
+            <PropertyRef Name="Price1" />
+            <PropertyRef Name="Price2" />
+            <PropertyRef Name="Price3" />
+            <PropertyRef Name="Price4" />
+            <PropertyRef Name="Price5" />
+            <PropertyRef Name="Price1A" />
+            <PropertyRef Name="Price2A" />
+            <PropertyRef Name="Price3A" />
+            <PropertyRef Name="Price4A" />
+            <PropertyRef Name="Price5A" />
+            <PropertyRef Name="fuelCode" />
+          </Key>
+          <Property Name="VehicleId" Type="int" Nullable="false" />
+          <Property Name="PlateNumber" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Chassis" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ClassCode" Type="int" Nullable="false" />
+          <Property Name="clasDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="brandCode" Type="int" Nullable="false" />
+          <Property Name="brandDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="modelCode" Type="int" Nullable="false" />
+          <Property Name="modelDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Color" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tranCode" Type="int" Nullable="false" />
+          <Property Name="tranDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ManufactureYear" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="statCode" Type="int" Nullable="false" />
+          <Property Name="statDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="AcquisitionDate" Type="date" Nullable="false" />
+          <Property Name="ownerCode" Type="int" Nullable="false" />
+          <Property Name="OwnName" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Mileage" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Price1" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price2" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price3" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price4" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price5" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price1A" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price2A" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price3A" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price4A" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Price5A" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="binPicture" Type="varbinary(max)" />
+          <Property Name="fuelCode" Type="int" Nullable="false" />
+          <Property Name="fuelDescription" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Function Name="spGetVehicleImagens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VehicleId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spMainVehicles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VEHICLEID" Type="int" Mode="In" />
+          <Parameter Name="PLATENUMBER" Type="varchar" Mode="In" />
+          <Parameter Name="CHASSIS" Type="varchar" Mode="In" />
+          <Parameter Name="CLASS" Type="int" Mode="In" />
+          <Parameter Name="DESCRIPTION" Type="varchar" Mode="In" />
+          <Parameter Name="BRAND" Type="int" Mode="In" />
+          <Parameter Name="MODEL" Type="int" Mode="In" />
+          <Parameter Name="COLOR" Type="varchar" Mode="In" />
+          <Parameter Name="TRANSMISSION" Type="int" Mode="In" />
+          <Parameter Name="FUEL" Type="int" Mode="In" />
+          <Parameter Name="MANUFACTUREYEAR" Type="varchar" Mode="In" />
+          <Parameter Name="STATUS" Type="int" Mode="In" />
+          <Parameter Name="ACQUISITIONDATE" Type="date" Mode="In" />
+          <Parameter Name="OWNER" Type="int" Mode="In" />
+          <Parameter Name="MILEAGE" Type="varchar" Mode="In" />
+          <Parameter Name="IMAGEN" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="PRICE1" Type="decimal" Mode="In" />
+          <Parameter Name="PRICE2" Type="decimal" Mode="In" />
+          <Parameter Name="PRICE3" Type="decimal" Mode="In" />
+          <Parameter Name="PRICE4" Type="decimal" Mode="In" />
+          <Parameter Name="PRICE5" Type="decimal" Mode="In" />
+          <Parameter Name="PRICE1A" Type="decimal" Mode="In" />
+          <Parameter Name="PRICE2A" Type="decimal" Mode="In" />
+          <Parameter Name="PRICE3A" Type="decimal" Mode="In" />
+          <Parameter Name="PRICE4A" Type="decimal" Mode="In" />
+          <Parameter Name="PRICE5A" Type="decimal" Mode="In" />
+          <Parameter Name="CREATEBY" Type="varchar" Mode="In" />
+          <Parameter Name="CREATEDATE" Type="smalldatetime" Mode="In" />
+          <Parameter Name="MODIFYBY" Type="varchar" Mode="In" />
+          <Parameter Name="MODIFYDATE" Type="smalldatetime" Mode="In" />
+        </Function>
+        <Function Name="spMainVehiclesExpensses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="VehicleId" Type="int" Mode="In" />
+          <Parameter Name="ExpenseType" Type="int" Mode="In" />
+          <Parameter Name="ExpenseDate" Type="date" Mode="In" />
+          <Parameter Name="ExpenseAmount" Type="decimal" Mode="In" />
+          <Parameter Name="ExpenseNotes" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spMainVehiclesImagens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ImageId" Type="int" Mode="In" />
+          <Parameter Name="VehicleId" Type="int" Mode="In" />
+          <Parameter Name="DefaultImage" Type="bit" Mode="In" />
+          <Parameter Name="Picture" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="spMainVehiclesMaintenaceInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="VehicleID" Type="int" Mode="In" />
+          <Parameter Name="LastMileageService" Type="int" Mode="In" />
+          <Parameter Name="IntervalMileageService" Type="int" Mode="In" />
+          <Parameter Name="LastServiceDate" Type="date" Mode="In" />
+          <Parameter Name="NextServiceDate" Type="date" Mode="In" />
+          <Parameter Name="NextInspectionDate" Type="date" Mode="In" />
+          <Parameter Name="PlateExpirationDate" Type="date" Mode="In" />
+          <Parameter Name="InsuranceExpirationDate" Type="date" Mode="In" />
+          <Parameter Name="InsurancePolicyNumber" Type="varchar" Mode="In" />
+          <Parameter Name="InsuranceCode" Type="int" Mode="In" />
+          <Parameter Name="InsuranceAmount" Type="decimal" Mode="In" />
+        </Function>
+        <EntityContainer Name="SISRENTModelStoreContainer">
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Filters" EntityType="Self.Filters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Insurences" EntityType="Self.Insurences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tables" EntityType="Self.Tables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicles" EntityType="Self.Vehicles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehiclesExpensses" EntityType="Self.VehiclesExpensses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehiclesImagens" EntityType="Self.VehiclesImagens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehiclesMaintenaceInfo" EntityType="Self.VehiclesMaintenaceInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehiclesPrices" EntityType="Self.VehiclesPrices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vwBrands" EntityType="Self.vwBrands" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwBrands].[KeyCode] AS [KeyCode], 
+    [vwBrands].[Code] AS [Code], 
+    [vwBrands].[Description] AS [Description]
+    FROM [dbo].[vwBrands] AS [vwBrands]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwClasses" EntityType="Self.vwClasses" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwClasses].[KeyCode] AS [KeyCode], 
+    [vwClasses].[Code] AS [Code], 
+    [vwClasses].[Description] AS [Description]
+    FROM [dbo].[vwClasses] AS [vwClasses]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwFilesDescriptions" EntityType="Self.vwFilesDescriptions" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwFilesDescriptions].[NombreTabla] AS [NombreTabla], 
+    [vwFilesDescriptions].[NombreCampo] AS [NombreCampo], 
+    [vwFilesDescriptions].[TipoDatos] AS [TipoDatos], 
+    [vwFilesDescriptions].[Precision] AS [Precision], 
+    [vwFilesDescriptions].[Escala] AS [Escala], 
+    [vwFilesDescriptions].[PermiteNulos] AS [PermiteNulos], 
+    [vwFilesDescriptions].[ValorDefecto] AS [ValorDefecto], 
+    [vwFilesDescriptions].[PrimaryKey] AS [PrimaryKey], 
+    [vwFilesDescriptions].[NombreIndice] AS [NombreIndice]
+    FROM [dbo].[vwFilesDescriptions] AS [vwFilesDescriptions]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwFuel" EntityType="Self.vwFuel" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwFuel].[KeyCode] AS [KeyCode], 
+    [vwFuel].[Code] AS [Code], 
+    [vwFuel].[Description] AS [Description]
+    FROM [dbo].[vwFuel] AS [vwFuel]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwModels" EntityType="Self.vwModels" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwModels].[KeyCode] AS [KeyCode], 
+    [vwModels].[Code] AS [Code], 
+    [vwModels].[Description] AS [Description]
+    FROM [dbo].[vwModels] AS [vwModels]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwSpentType" EntityType="Self.vwSpentType" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwSpentType].[KeyCode] AS [KeyCode], 
+    [vwSpentType].[Code] AS [Code], 
+    [vwSpentType].[Description] AS [Description]
+    FROM [dbo].[vwSpentType] AS [vwSpentType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwStatus" EntityType="Self.vwStatus" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwStatus].[KeyCode] AS [KeyCode], 
+    [vwStatus].[Code] AS [Code], 
+    [vwStatus].[Description] AS [Description]
+    FROM [dbo].[vwStatus] AS [vwStatus]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTrans" EntityType="Self.vwTrans" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwTrans].[KeyCode] AS [KeyCode], 
+    [vwTrans].[Code] AS [Code], 
+    [vwTrans].[Description] AS [Description]
+    FROM [dbo].[vwTrans] AS [vwTrans]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwVehicles" EntityType="Self.vwVehicles" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwVehicles].[VehicleId] AS [VehicleId], 
+    [vwVehicles].[PlateNumber] AS [PlateNumber], 
+    [vwVehicles].[Chassis] AS [Chassis], 
+    [vwVehicles].[ClassCode] AS [ClassCode], 
+    [vwVehicles].[clasDescription] AS [clasDescription], 
+    [vwVehicles].[Description] AS [Description], 
+    [vwVehicles].[brandCode] AS [brandCode], 
+    [vwVehicles].[brandDescription] AS [brandDescription], 
+    [vwVehicles].[modelCode] AS [modelCode], 
+    [vwVehicles].[modelDescription] AS [modelDescription], 
+    [vwVehicles].[Color] AS [Color], 
+    [vwVehicles].[tranCode] AS [tranCode], 
+    [vwVehicles].[tranDescription] AS [tranDescription], 
+    [vwVehicles].[ManufactureYear] AS [ManufactureYear], 
+    [vwVehicles].[statCode] AS [statCode], 
+    [vwVehicles].[statDescription] AS [statDescription], 
+    [vwVehicles].[AcquisitionDate] AS [AcquisitionDate], 
+    [vwVehicles].[ownerCode] AS [ownerCode], 
+    [vwVehicles].[OwnName] AS [OwnName], 
+    [vwVehicles].[Mileage] AS [Mileage], 
+    [vwVehicles].[Price1] AS [Price1], 
+    [vwVehicles].[Price2] AS [Price2], 
+    [vwVehicles].[Price3] AS [Price3], 
+    [vwVehicles].[Price4] AS [Price4], 
+    [vwVehicles].[Price5] AS [Price5], 
+    [vwVehicles].[Price1A] AS [Price1A], 
+    [vwVehicles].[Price2A] AS [Price2A], 
+    [vwVehicles].[Price3A] AS [Price3A], 
+    [vwVehicles].[Price4A] AS [Price4A], 
+    [vwVehicles].[Price5A] AS [Price5A], 
+    [vwVehicles].[binPicture] AS [binPicture], 
+    [vwVehicles].[fuelCode] AS [fuelCode], 
+    [vwVehicles].[fuelDescription] AS [fuelDescription]
+    FROM [dbo].[vwVehicles] AS [vwVehicles]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SISRENTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="TableName" />
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rid" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TableName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UDF01" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UDF02" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UDF03" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UDF04" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UDF05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UDF06" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UDF07" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UDF08" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UDF09" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UDF10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifyBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="vwBrand">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwClass">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwFilesDescription">
+          <Key>
+            <PropertyRef Name="NombreTabla" />
+            <PropertyRef Name="TipoDatos" />
+            <PropertyRef Name="PermiteNulos" />
+          </Key>
+          <Property Name="NombreTabla" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NombreCampo" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="TipoDatos" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Precision" Type="Int16" />
+          <Property Name="Escala" Type="Int32" />
+          <Property Name="PermiteNulos" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ValorDefecto" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryKey" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="NombreIndice" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwFuel">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwModel">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwStatu">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwTran">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SISRENTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tables" EntityType="Self.Table" />
+          <EntitySet Name="vwBrands" EntityType="Self.vwBrand" />
+          <EntitySet Name="vwClasses" EntityType="Self.vwClass" />
+          <EntitySet Name="vwFilesDescriptions" EntityType="Self.vwFilesDescription" />
+          <EntitySet Name="vwFuels" EntityType="Self.vwFuel" />
+          <EntitySet Name="vwModels" EntityType="Self.vwModel" />
+          <EntitySet Name="vwStatus" EntityType="Self.vwStatu" />
+          <EntitySet Name="vwTrans" EntityType="Self.vwTran" />
+          <EntitySet Name="Filters" EntityType="SISRENTModel.Filter" />
+          <FunctionImport Name="spGetVehicleImagens" ReturnType="Collection(SISRENTModel.spGetVehicleImagens_Result)">
+          <Parameter Name="VehicleId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spMainVehiclesExpensses">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="VehicleId" Mode="In" Type="Int32" />
+            <Parameter Name="ExpenseType" Mode="In" Type="Int32" />
+            <Parameter Name="ExpenseDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ExpenseAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="ExpenseNotes" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spMainVehiclesMaintenaceInfo">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="VehicleID" Mode="In" Type="Int32" />
+            <Parameter Name="LastMileageService" Mode="In" Type="Int32" />
+            <Parameter Name="IntervalMileageService" Mode="In" Type="Int32" />
+            <Parameter Name="LastServiceDate" Mode="In" Type="DateTime" />
+            <Parameter Name="NextServiceDate" Mode="In" Type="DateTime" />
+            <Parameter Name="NextInspectionDate" Mode="In" Type="DateTime" />
+            <Parameter Name="PlateExpirationDate" Mode="In" Type="DateTime" />
+            <Parameter Name="InsuranceExpirationDate" Mode="In" Type="DateTime" />
+            <Parameter Name="InsurancePolicyNumber" Mode="In" Type="String" />
+            <Parameter Name="InsuranceCode" Mode="In" Type="Int32" />
+            <Parameter Name="InsuranceAmount" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <EntitySet Name="VehiclesExpensses" EntityType="SISRENTModel.VehiclesExpenss" />
+          <EntitySet Name="VehiclesMaintenaceInfoes" EntityType="SISRENTModel.VehiclesMaintenaceInfo" />
+          <EntitySet Name="Clients" EntityType="SISRENTModel.Client" />
+          <EntitySet Name="Insurences" EntityType="SISRENTModel.Insurence" />
+          <EntitySet Name="Partners" EntityType="SISRENTModel.Partner" />
+          <EntitySet Name="vwSpentTypes" EntityType="SISRENTModel.vwSpentType" />
+          <EntitySet Name="VehiclesImagens" EntityType="SISRENTModel.VehiclesImagen" />
+          <FunctionImport Name="spMainVehicles">
+            <Parameter Name="VEHICLEID" Mode="In" Type="Int32" />
+            <Parameter Name="PLATENUMBER" Mode="In" Type="String" />
+            <Parameter Name="CHASSIS" Mode="In" Type="String" />
+            <Parameter Name="CLASS" Mode="In" Type="Int32" />
+            <Parameter Name="DESCRIPTION" Mode="In" Type="String" />
+            <Parameter Name="BRAND" Mode="In" Type="Int32" />
+            <Parameter Name="MODEL" Mode="In" Type="Int32" />
+            <Parameter Name="COLOR" Mode="In" Type="String" />
+            <Parameter Name="TRANSMISSION" Mode="In" Type="Int32" />
+            <Parameter Name="FUEL" Mode="In" Type="Int32" />
+            <Parameter Name="MANUFACTUREYEAR" Mode="In" Type="String" />
+            <Parameter Name="STATUS" Mode="In" Type="Int32" />
+            <Parameter Name="ACQUISITIONDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="OWNER" Mode="In" Type="Int32" />
+            <Parameter Name="MILEAGE" Mode="In" Type="String" />
+            <Parameter Name="IMAGEN" Mode="In" Type="Binary" />
+            <Parameter Name="PRICE1" Mode="In" Type="Decimal" />
+            <Parameter Name="PRICE2" Mode="In" Type="Decimal" />
+            <Parameter Name="PRICE3" Mode="In" Type="Decimal" />
+            <Parameter Name="PRICE4" Mode="In" Type="Decimal" />
+            <Parameter Name="PRICE5" Mode="In" Type="Decimal" />
+            <Parameter Name="PRICE1A" Mode="In" Type="Decimal" />
+            <Parameter Name="PRICE2A" Mode="In" Type="Decimal" />
+            <Parameter Name="PRICE3A" Mode="In" Type="Decimal" />
+            <Parameter Name="PRICE4A" Mode="In" Type="Decimal" />
+            <Parameter Name="PRICE5A" Mode="In" Type="Decimal" />
+            <Parameter Name="CREATEBY" Mode="In" Type="String" />
+            <Parameter Name="CREATEDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="MODIFYBY" Mode="In" Type="String" />
+            <Parameter Name="MODIFYDATE" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spMainVehiclesImagens">
+            <Parameter Name="ImageId" Mode="In" Type="Int32" />
+            <Parameter Name="VehicleId" Mode="In" Type="Int32" />
+            <Parameter Name="DefaultImage" Mode="In" Type="Boolean" />
+            <Parameter Name="Picture" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <EntitySet Name="Vehicles" EntityType="SISRENTModel.Vehicle" />
+          <EntitySet Name="vwVehicles" EntityType="SISRENTModel.vwVehicle" />
+          <EntitySet Name="VehiclesPrices" EntityType="SISRENTModel.VehiclesPrice" />
+        </EntityContainer>
+        <EntityType Name="Filter">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TableName" />
+            <PropertyRef Name="FieldName" />
+          </Key>
+          <Property Name="Rid" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TableName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FieldName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FieldOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDateBy" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModiFiedDateBy" Type="DateTime" Precision="0" />
+        </EntityType>
+        <ComplexType Name="spGetVehicleImagens_Result">
+          <Property Type="Int32" Name="IdImagen" Nullable="false" />
+          <Property Type="Int32" Name="idVehicle" Nullable="false" />
+          <Property Type="Boolean" Name="DefaultImagen" Nullable="false" />
+          <Property Type="Binary" Name="Picture" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="VehiclesExpenss">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleId" Type="Int32" Nullable="false" />
+          <Property Name="ExpenseType" Type="Int32" Nullable="false" />
+          <Property Name="ExpenseDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ExpenseAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ExpenseNotes" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VehiclesMaintenaceInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleID" Type="Int32" Nullable="false" />
+          <Property Name="LastMileageService" Type="Int32" Nullable="false" />
+          <Property Name="IntervalMileageService" Type="Int32" Nullable="false" />
+          <Property Name="LastServiceDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NextServiceDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NextInspectionDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PlateExpirationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="InsuranceCode" Type="Int32" Nullable="false" />
+          <Property Name="InsurancePolicyNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InsuranceExpirationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="InsuranceAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Adress1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Adress2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LicenseNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LicenceExpiration" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NacionalityId" Type="Int32" Nullable="false" />
+          <Property Name="IdentificationNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Insurence">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Adress1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Adress2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Partner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Adress1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Adress2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vwSpentType">
+          <Key>
+            <PropertyRef Name="KeyCode" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="KeyCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VehiclesImagen">
+          <Key>
+            <PropertyRef Name="IdImagen" />
+          </Key>
+          <Property Name="IdImagen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idVehicle" Type="Int32" Nullable="false" />
+          <Property Name="Rid" Type="Guid" Nullable="false" />
+          <Property Name="DefaultImagen" Type="Boolean" Nullable="false" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="VehicleId" />
+          </Key>
+          <Property Name="VehicleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlateNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Chassis" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Class" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Brand" Type="Int32" Nullable="false" />
+          <Property Name="Model" Type="Int32" Nullable="false" />
+          <Property Name="Color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Transmission" Type="Int32" Nullable="false" />
+          <Property Name="Fuel" Type="Int32" Nullable="false" />
+          <Property Name="ManufactureYear" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="AcquisitionDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Owner" Type="Int32" Nullable="false" />
+          <Property Name="Mileage" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price1" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price2" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price3" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price4" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price5" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price1A" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price2A" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price3A" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price4A" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price5A" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="CreateBy" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifyBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="vwVehicle">
+          <Key>
+            <PropertyRef Name="VehicleId" />
+            <PropertyRef Name="PlateNumber" />
+            <PropertyRef Name="Chassis" />
+            <PropertyRef Name="ClassCode" />
+            <PropertyRef Name="clasDescription" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="brandCode" />
+            <PropertyRef Name="brandDescription" />
+            <PropertyRef Name="modelCode" />
+            <PropertyRef Name="modelDescription" />
+            <PropertyRef Name="Color" />
+            <PropertyRef Name="tranCode" />
+            <PropertyRef Name="tranDescription" />
+            <PropertyRef Name="ManufactureYear" />
+            <PropertyRef Name="statCode" />
+            <PropertyRef Name="statDescription" />
+            <PropertyRef Name="AcquisitionDate" />
+            <PropertyRef Name="ownerCode" />
+            <PropertyRef Name="OwnName" />
+            <PropertyRef Name="Mileage" />
+            <PropertyRef Name="Price1" />
+            <PropertyRef Name="Price2" />
+            <PropertyRef Name="Price3" />
+            <PropertyRef Name="Price4" />
+            <PropertyRef Name="Price5" />
+            <PropertyRef Name="Price1A" />
+            <PropertyRef Name="Price2A" />
+            <PropertyRef Name="Price3A" />
+            <PropertyRef Name="Price4A" />
+            <PropertyRef Name="Price5A" />
+            <PropertyRef Name="fuelCode" />
+          </Key>
+          <Property Name="VehicleId" Type="Int32" Nullable="false" />
+          <Property Name="PlateNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Chassis" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClassCode" Type="Int32" Nullable="false" />
+          <Property Name="clasDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="brandCode" Type="Int32" Nullable="false" />
+          <Property Name="brandDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="modelCode" Type="Int32" Nullable="false" />
+          <Property Name="modelDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tranCode" Type="Int32" Nullable="false" />
+          <Property Name="tranDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ManufactureYear" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="statCode" Type="Int32" Nullable="false" />
+          <Property Name="statDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AcquisitionDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ownerCode" Type="Int32" Nullable="false" />
+          <Property Name="OwnName" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Mileage" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Price1" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price2" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price3" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price4" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price5" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price1A" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price2A" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price3A" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price4A" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="Price5A" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="binPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="fuelCode" Type="Int32" Nullable="false" />
+          <Property Name="fuelDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VehiclesPrice">
+          <Key>
+            <PropertyRef Name="PriceId" />
+            <PropertyRef Name="VehicleId" />
+          </Key>
+          <Property Name="PriceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleId" Type="Int32" Nullable="false" />
+          <Property Name="DayRange1" Type="Int32" Nullable="false" />
+          <Property Name="DayRange2" Type="Int32" Nullable="false" />
+          <Property Name="Price1" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Price2" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SISRENTModelStoreContainer" CdmEntityContainer="SISRENTEntities">
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="SISRENTModel.Table">
+              <MappingFragment StoreEntitySet="Tables">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Rid" ColumnName="Rid" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UDF01" ColumnName="UDF01" />
+                <ScalarProperty Name="UDF02" ColumnName="UDF02" />
+                <ScalarProperty Name="UDF03" ColumnName="UDF03" />
+                <ScalarProperty Name="UDF04" ColumnName="UDF04" />
+                <ScalarProperty Name="UDF05" ColumnName="UDF05" />
+                <ScalarProperty Name="UDF06" ColumnName="UDF06" />
+                <ScalarProperty Name="UDF07" ColumnName="UDF07" />
+                <ScalarProperty Name="UDF08" ColumnName="UDF08" />
+                <ScalarProperty Name="UDF09" ColumnName="UDF09" />
+                <ScalarProperty Name="UDF10" ColumnName="UDF10" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwBrands">
+            <EntityTypeMapping TypeName="SISRENTModel.vwBrand">
+              <MappingFragment StoreEntitySet="vwBrands">
+                <ScalarProperty Name="KeyCode" ColumnName="KeyCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwClasses">
+            <EntityTypeMapping TypeName="SISRENTModel.vwClass">
+              <MappingFragment StoreEntitySet="vwClasses">
+                <ScalarProperty Name="KeyCode" ColumnName="KeyCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwFilesDescriptions">
+            <EntityTypeMapping TypeName="SISRENTModel.vwFilesDescription">
+              <MappingFragment StoreEntitySet="vwFilesDescriptions">
+                <ScalarProperty Name="NombreTabla" ColumnName="NombreTabla" />
+                <ScalarProperty Name="NombreCampo" ColumnName="NombreCampo" />
+                <ScalarProperty Name="TipoDatos" ColumnName="TipoDatos" />
+                <ScalarProperty Name="Precision" ColumnName="Precision" />
+                <ScalarProperty Name="Escala" ColumnName="Escala" />
+                <ScalarProperty Name="PermiteNulos" ColumnName="PermiteNulos" />
+                <ScalarProperty Name="ValorDefecto" ColumnName="ValorDefecto" />
+                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
+                <ScalarProperty Name="NombreIndice" ColumnName="NombreIndice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwFuels">
+            <EntityTypeMapping TypeName="SISRENTModel.vwFuel">
+              <MappingFragment StoreEntitySet="vwFuel">
+                <ScalarProperty Name="KeyCode" ColumnName="KeyCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwModels">
+            <EntityTypeMapping TypeName="SISRENTModel.vwModel">
+              <MappingFragment StoreEntitySet="vwModels">
+                <ScalarProperty Name="KeyCode" ColumnName="KeyCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwStatus">
+            <EntityTypeMapping TypeName="SISRENTModel.vwStatu">
+              <MappingFragment StoreEntitySet="vwStatus">
+                <ScalarProperty Name="KeyCode" ColumnName="KeyCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwTrans">
+            <EntityTypeMapping TypeName="SISRENTModel.vwTran">
+              <MappingFragment StoreEntitySet="vwTrans">
+                <ScalarProperty Name="KeyCode" ColumnName="KeyCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Filters">
+            <EntityTypeMapping TypeName="SISRENTModel.Filter">
+              <MappingFragment StoreEntitySet="Filters">
+                <ScalarProperty Name="ModiFiedDateBy" ColumnName="ModiFiedDateBy" />
+                <ScalarProperty Name="CreatedDateBy" ColumnName="CreatedDateBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="FieldOrder" ColumnName="FieldOrder" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Rid" ColumnName="Rid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spGetVehicleImagens" FunctionName="SISRENTModel.Store.spGetVehicleImagens">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SISRENTModel.spGetVehicleImagens_Result">
+                <ScalarProperty Name="IdImagen" ColumnName="IdImagen" />
+                <ScalarProperty Name="idVehicle" ColumnName="idVehicle" />
+                <ScalarProperty Name="DefaultImagen" ColumnName="DefaultImagen" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spMainVehiclesExpensses" FunctionName="SISRENTModel.Store.spMainVehiclesExpensses" />
+          <FunctionImportMapping FunctionImportName="spMainVehiclesMaintenaceInfo" FunctionName="SISRENTModel.Store.spMainVehiclesMaintenaceInfo" />
+          <EntitySetMapping Name="VehiclesExpensses">
+            <EntityTypeMapping TypeName="SISRENTModel.VehiclesExpenss">
+              <MappingFragment StoreEntitySet="VehiclesExpensses">
+                <ScalarProperty Name="ExpenseNotes" ColumnName="ExpenseNotes" />
+                <ScalarProperty Name="ExpenseAmount" ColumnName="ExpenseAmount" />
+                <ScalarProperty Name="ExpenseDate" ColumnName="ExpenseDate" />
+                <ScalarProperty Name="ExpenseType" ColumnName="ExpenseType" />
+                <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehiclesMaintenaceInfoes">
+            <EntityTypeMapping TypeName="SISRENTModel.VehiclesMaintenaceInfo">
+              <MappingFragment StoreEntitySet="VehiclesMaintenaceInfo">
+                <ScalarProperty Name="InsuranceAmount" ColumnName="InsuranceAmount" />
+                <ScalarProperty Name="InsuranceExpirationDate" ColumnName="InsuranceExpirationDate" />
+                <ScalarProperty Name="InsurancePolicyNumber" ColumnName="InsurancePolicyNumber" />
+                <ScalarProperty Name="InsuranceCode" ColumnName="InsuranceCode" />
+                <ScalarProperty Name="PlateExpirationDate" ColumnName="PlateExpirationDate" />
+                <ScalarProperty Name="NextInspectionDate" ColumnName="NextInspectionDate" />
+                <ScalarProperty Name="NextServiceDate" ColumnName="NextServiceDate" />
+                <ScalarProperty Name="LastServiceDate" ColumnName="LastServiceDate" />
+                <ScalarProperty Name="IntervalMileageService" ColumnName="IntervalMileageService" />
+                <ScalarProperty Name="LastMileageService" ColumnName="LastMileageService" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="SISRENTModel.Client">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="IdentificationNumber" ColumnName="IdentificationNumber" />
+                <ScalarProperty Name="NacionalityId" ColumnName="NacionalityId" />
+                <ScalarProperty Name="LicenceExpiration" ColumnName="LicenceExpiration" />
+                <ScalarProperty Name="LicenseNumber" ColumnName="LicenseNumber" />
+                <ScalarProperty Name="Adress2" ColumnName="Adress2" />
+                <ScalarProperty Name="Adress1" ColumnName="Adress1" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Insurences">
+            <EntityTypeMapping TypeName="SISRENTModel.Insurence">
+              <MappingFragment StoreEntitySet="Insurences">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Adress2" ColumnName="Adress2" />
+                <ScalarProperty Name="Adress1" ColumnName="Adress1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partners">
+            <EntityTypeMapping TypeName="SISRENTModel.Partner">
+              <MappingFragment StoreEntitySet="Partners">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Adress2" ColumnName="Adress2" />
+                <ScalarProperty Name="Adress1" ColumnName="Adress1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwSpentTypes">
+            <EntityTypeMapping TypeName="SISRENTModel.vwSpentType">
+              <MappingFragment StoreEntitySet="vwSpentType">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="KeyCode" ColumnName="KeyCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehiclesImagens">
+            <EntityTypeMapping TypeName="SISRENTModel.VehiclesImagen">
+              <MappingFragment StoreEntitySet="VehiclesImagens">
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="DefaultImagen" ColumnName="DefaultImagen" />
+                <ScalarProperty Name="Rid" ColumnName="Rid" />
+                <ScalarProperty Name="idVehicle" ColumnName="idVehicle" />
+                <ScalarProperty Name="IdImagen" ColumnName="IdImagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spMainVehicles" FunctionName="SISRENTModel.Store.spMainVehicles" />
+          <FunctionImportMapping FunctionImportName="spMainVehiclesImagens" FunctionName="SISRENTModel.Store.spMainVehiclesImagens" />
+          <EntitySetMapping Name="Vehicles">
+            <EntityTypeMapping TypeName="SISRENTModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicles">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Price5A" ColumnName="Price5A" />
+                <ScalarProperty Name="Price4A" ColumnName="Price4A" />
+                <ScalarProperty Name="Price3A" ColumnName="Price3A" />
+                <ScalarProperty Name="Price2A" ColumnName="Price2A" />
+                <ScalarProperty Name="Price1A" ColumnName="Price1A" />
+                <ScalarProperty Name="Price5" ColumnName="Price5" />
+                <ScalarProperty Name="Price4" ColumnName="Price4" />
+                <ScalarProperty Name="Price3" ColumnName="Price3" />
+                <ScalarProperty Name="Price2" ColumnName="Price2" />
+                <ScalarProperty Name="Price1" ColumnName="Price1" />
+                <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="AcquisitionDate" ColumnName="AcquisitionDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ManufactureYear" ColumnName="ManufactureYear" />
+                <ScalarProperty Name="Fuel" ColumnName="Fuel" />
+                <ScalarProperty Name="Transmission" ColumnName="Transmission" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Chassis" ColumnName="Chassis" />
+                <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+                <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwVehicles">
+            <EntityTypeMapping TypeName="SISRENTModel.vwVehicle">
+              <MappingFragment StoreEntitySet="vwVehicles">
+                <ScalarProperty Name="fuelDescription" ColumnName="fuelDescription" />
+                <ScalarProperty Name="fuelCode" ColumnName="fuelCode" />
+                <ScalarProperty Name="binPicture" ColumnName="binPicture" />
+                <ScalarProperty Name="Price5A" ColumnName="Price5A" />
+                <ScalarProperty Name="Price4A" ColumnName="Price4A" />
+                <ScalarProperty Name="Price3A" ColumnName="Price3A" />
+                <ScalarProperty Name="Price2A" ColumnName="Price2A" />
+                <ScalarProperty Name="Price1A" ColumnName="Price1A" />
+                <ScalarProperty Name="Price5" ColumnName="Price5" />
+                <ScalarProperty Name="Price4" ColumnName="Price4" />
+                <ScalarProperty Name="Price3" ColumnName="Price3" />
+                <ScalarProperty Name="Price2" ColumnName="Price2" />
+                <ScalarProperty Name="Price1" ColumnName="Price1" />
+                <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+                <ScalarProperty Name="OwnName" ColumnName="OwnName" />
+                <ScalarProperty Name="ownerCode" ColumnName="ownerCode" />
+                <ScalarProperty Name="AcquisitionDate" ColumnName="AcquisitionDate" />
+                <ScalarProperty Name="statDescription" ColumnName="statDescription" />
+                <ScalarProperty Name="statCode" ColumnName="statCode" />
+                <ScalarProperty Name="ManufactureYear" ColumnName="ManufactureYear" />
+                <ScalarProperty Name="tranDescription" ColumnName="tranDescription" />
+                <ScalarProperty Name="tranCode" ColumnName="tranCode" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="modelDescription" ColumnName="modelDescription" />
+                <ScalarProperty Name="modelCode" ColumnName="modelCode" />
+                <ScalarProperty Name="brandDescription" ColumnName="brandDescription" />
+                <ScalarProperty Name="brandCode" ColumnName="brandCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="clasDescription" ColumnName="clasDescription" />
+                <ScalarProperty Name="ClassCode" ColumnName="ClassCode" />
+                <ScalarProperty Name="Chassis" ColumnName="Chassis" />
+                <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+                <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehiclesPrices">
+            <EntityTypeMapping TypeName="SISRENTModel.VehiclesPrice">
+              <MappingFragment StoreEntitySet="VehiclesPrices">
+                <ScalarProperty Name="Price2" ColumnName="Price2" />
+                <ScalarProperty Name="Price1" ColumnName="Price1" />
+                <ScalarProperty Name="DayRange2" ColumnName="DayRange2" />
+                <ScalarProperty Name="DayRange1" ColumnName="DayRange1" />
+                <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+                <ScalarProperty Name="PriceId" ColumnName="PriceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
